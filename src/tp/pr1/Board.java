@@ -270,20 +270,23 @@ public class Board {
 	 public String toString(){
 		 int cellSize = 7;
 			String tablero = "";
+			String space = " ";
+			String vDelimiter = "|";
+			String hDelimiter = "-";
 			
-			for(int i = 0; i < cellSize*2+1; i++){
+			for(int i = 0; i < _boardSize*2+1; i++){
 				for(int j = 0; j < cellSize*_boardSize+_boardSize;j++){
 					if(i%2 == 0){
 						if(j!= 0){
-							tablero += "-";
+							tablero += hDelimiter;
 						}
 						else{
-							tablero+= " ";
+							tablero+= space;
 						}
 					}
 					else{
 						if(j%(cellSize) == 0 ){
-							tablero += "|";
+							tablero += vDelimiter;
 						}
 						int filaC = i/2;
 						int colC = j/(cellSize);
@@ -293,7 +296,7 @@ public class Board {
 							tablero +=valor;
 						}
 						else{
-							tablero += " ";
+							tablero += space;
 						}
 					}
 				}
